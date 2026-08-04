@@ -1,0 +1,446 @@
+@charset "UTF-8";
+
+/* =========================================================
+   Variables（W早稲田ゼミ想定カラー・仮）
+========================================================= */
+:root {
+  --c-blue:      #1a4fd6;
+  --c-blue-dk:   #0d2e8f;
+  --c-blue-sky:  #4fa3e3;
+  --c-gold:      #ffb800;
+  --c-yellow:    #ffe600;
+  --c-red:       #e6383f;
+  --c-green:     #1e9e6b;
+  --c-pink:      #e6337f;
+  --c-white:     #ffffff;
+  --c-off:       #f5f7fb;
+  --c-dark:      #1a1a2e;
+  --c-gray:      #767a8a;
+  --c-border:    #dfe3ee;
+
+  --radius:      12px;
+  --shadow:      0 6px 20px rgba(13, 46, 143, 0.12);
+
+  --lp-width:    500px; /* PC時の中央（モバイル版）カラム幅 */
+}
+
+/* =========================================================
+   Reset / Base（モバイルファースト）
+========================================================= */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: var(--c-dark);
+  background: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: opacity .2s, transform .15s;
+}
+.btn:hover { opacity: .85; transform: translateY(-1px); }
+.btn--cta {
+  background: linear-gradient(180deg, #ffc933, var(--c-gold));
+  color: var(--c-blue-dk);
+  box-shadow: 0 6px 16px rgba(255, 184, 0, .45);
+}
+.btn--outline {
+  background: transparent;
+  color: var(--c-white);
+  border: 2px solid var(--c-white);
+}
+
+.sec-ttl {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--c-blue-dk);
+  text-align: center;
+  padding: 32px 20px 20px;
+}
+.sec-ttl--light { color: var(--c-white); }
+.sec-ttl--yellow { color: var(--c-blue-dk); }
+
+/* =========================================================
+   中央カラム：モバイル版LP本体（.lp = サンプルコンテンツ）
+   ここは単体でモバイル表示としてそのまま成立する作り
+========================================================= */
+.lp {
+  width: 100%;
+  max-width: var(--lp-width);
+  margin: 0 auto;
+  background: var(--c-white);
+  overflow: hidden;
+}
+
+/* --- KV --- */
+.kv { position: relative; padding-bottom: 24px; background: #f5f5f5; }
+.kv__mv img { width: 100%; height: auto; }
+.kv__cta {
+  width: calc(100% - 24px);
+  margin: 32px auto 0;
+  padding: 20px 20px;
+  font-size: 21px;
+  font-weight: 700;
+  font-family: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background: #ff4500;
+  color: var(--c-white);
+  box-shadow: 0 6px 16px rgba(255, 69, 0, .4);
+}
+.kv__logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 160px;
+  z-index: 2;
+}
+.kv__logo img { width: 100%; height: auto; }
+
+/* --- 一斉開催！開催概要 --- */
+.event { background: #f5f5f5; padding-top: 28px; }
+.event__body { background: var(--c-white); padding-bottom: 28px; }
+.event__banner {
+  background: #ff4500;
+  color: var(--c-white);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 14px 20px;
+  margin-bottom: 22px;
+}
+.event__catch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 10px;
+  margin-bottom: 22px;
+}
+.event__cracker { width: 15vw; max-width: 64px; min-width: 40px; height: auto; flex-shrink: 0; }
+.event__catch-text {
+  position: relative;
+  font-size: clamp(28px, 9vw, 42px);
+  font-weight: 900;
+  color: #ff4500;
+  white-space: nowrap;
+}
+.event__catch-text::before {
+  content: "";
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: 58%;
+  height: 24%;
+  background: var(--c-yellow);
+  transform: skewY(-4deg);
+  z-index: -1;
+}
+.event__box {
+  margin: 0 20px 24px;
+  background: var(--c-white);
+  border: 4px solid #ff4500;
+  border-radius: 20px;
+  padding: 22px 16px;
+  text-align: center;
+}
+.event__target {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--c-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-bottom: 14px;
+}
+.event__name {
+  font-size: clamp(15px, 5.6vw, 21px);
+  font-weight: 900;
+  color: #1fa7d8;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+.event__sub { font-size: 12px; font-weight: 600; color: var(--c-gray); }
+.event__date-label { text-align: center; font-size: 15px; font-weight: 800; color: var(--c-dark); }
+.event__date { text-align: center; font-size: clamp(38px, 12vw, 50px); font-weight: 900; color: var(--c-pink); line-height: 1.3; }
+.event__date small { font-size: 0.5em; }
+.event__link {
+  width: calc(100% - 40px);
+  margin: 18px auto 0;
+  padding: 18px 20px;
+  font-size: 17px;
+  background: var(--c-pink);
+  color: var(--c-white);
+  box-shadow: 0 6px 16px rgba(230, 51, 127, .35);
+}
+
+/* --- 説明会参加者限定特典 --- */
+.tokuten { padding: 28px 20px; background: #f5f5f5; }
+.tokuten__img { width: 100%; height: auto; }
+
+/* --- お悩みありませんか --- */
+.worries { padding: 28px 20px; background: #f5f5f5; }
+.worries__img { width: 100%; height: auto; }
+
+/* --- 2学期も「スタートが肝心」 --- */
+.reason { text-align: center; }
+.reason__hero { width: 100%; height: auto; display: block; }
+.reason__body { padding: 24px 20px; background: #f5f5f5; }
+.reason__img { width: 100%; height: auto; }
+.reason__img--grades { margin-top: 16px; }
+.reason__list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.reason__item {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-white);
+}
+.reason__item--blue { background: var(--c-blue); }
+
+/* --- 説明会内容 --- */
+.content-sec { padding-bottom: 24px; text-align: center; }
+.content-sec__lead { font-size: 13px; font-weight: 700; color: var(--c-gray); padding-top: 24px; }
+.content-sec__box {
+  margin: 0 20px;
+  background: var(--c-off);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: left;
+}
+.content-sec__ttl { text-align: center; font-size: 15px; font-weight: 800; color: var(--c-blue-dk); margin-bottom: 14px; }
+.content-sec__list { display: flex; flex-direction: column; gap: 10px; }
+.content-sec__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.content-sec__list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--c-green);
+  font-weight: 900;
+}
+
+/* --- W早稲田ゼミの特徴 --- */
+.features { padding-bottom: 24px; text-align: center; }
+.features__list {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.features__item {
+  background: var(--c-blue-dk);
+  color: var(--c-white);
+  border-radius: var(--radius);
+  padding: 16px 8px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.features__note { margin-top: 18px; padding: 0 20px; font-size: 13px; font-weight: 700; color: var(--c-blue-dk); line-height: 1.6; }
+
+/* --- 勉強も！教師紹介！進路も！未来も！ --- */
+.voice { display: flex; flex-direction: column; }
+.voice__img { width: 100%; height: auto; display: block; }
+
+/* --- スクロールで徐々に表示するアニメーション --- */
+.reveal {
+  opacity: 0;
+  transition: opacity .8s ease-out, transform .8s ease-out;
+}
+.reveal--left { transform: translateX(-60px); }
+.reveal--right { transform: translateX(60px); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- 校舎別説明会日程 --- */
+.schedule__list {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.schedule__list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.schedule__time { color: var(--c-blue); }
+.schedule__note { padding: 10px 20px 0; font-size: 12px; color: var(--c-gray); text-align: center; }
+
+/* --- entry --- */
+.entry {
+  margin-top: 40px;
+  padding: 32px 20px 40px;
+  background: linear-gradient(160deg, var(--c-blue), var(--c-blue-dk));
+  text-align: center;
+}
+.entry__lead { color: var(--c-white); font-size: 13px; margin-bottom: 16px; }
+.entry__btn { max-width: 340px; margin: 0 auto 12px; }
+
+.lp-footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--c-gray);
+  background: var(--c-dark);
+  color: rgba(255,255,255,.5);
+}
+
+/* =========================================================
+   PC専用パーツ（デフォルトは非表示。モバイルでは出さない）
+========================================================= */
+.pc-left,
+.pc-right,
+.pc-nav { display: none; }
+
+/* モバイル固定CTA（PCでは非表示） */
+.mobile-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+  z-index: 100;
+}
+.mobile-cta .btn { max-width: 480px; margin: 0 auto; }
+
+/* .lp に固定CTA分の余白を確保 */
+.lp { padding-bottom: 76px; }
+
+/* =========================================================
+   PC レイアウト（3カラム）
+   左：タイトル・MV・CTA／中央：モバイル版そのまま／右：ナビ
+========================================================= */
+@media screen and (min-width: 1280px) {
+
+  body {
+    background: url("../img/bg_pc.png") center / cover no-repeat fixed;
+  }
+
+  .mobile-cta { display: none; }
+  .lp { padding-bottom: 0; }
+
+  .pc-frame {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  /* ---- 左カラム ---- */
+  .pc-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 320px;
+    background: none;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 40px;
+    color: var(--c-dark);
+  }
+  .pc-left__inner {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pc-left__mv {
+    width: 100%;
+    margin: 0 0 36px;
+    filter: drop-shadow(0 10px 24px rgba(13, 46, 143, .18));
+    animation: pcMvFloat 3.5s ease-in-out infinite;
+  }
+  @keyframes pcMvFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .pc-left__mv img {
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--c-yellow);
+    border-radius: 24px;
+  }
+  .pc-left__cta {
+    max-width: 340px;
+    font-size: 19px;
+    background: #ff4500;
+    color: var(--c-white);
+    box-shadow: 0 6px 16px rgba(255, 69, 0, .4);
+  }
+
+  /* ---- 中央カラム（モバイル版をそのまま表示） ---- */
+  .lp {
+    flex: 0 0 var(--lp-width);
+    width: var(--lp-width);
+    max-width: var(--lp-width);
+    box-shadow: var(--shadow);
+  }
+
+  /* ---- 右カラム ---- */
+  .pc-right {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 260px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 40px;
+  }
+  .pc-nav { display: block; width: 100%; max-width: 260px; margin-right: auto; }
+  .pc-nav ul { display: flex; flex-direction: column; gap: 14px; }
+  .pc-nav a {
+    display: block;
+    background: #ff4500;
+    border: 2px solid #000;
+    border-radius: 999px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--c-white);
+    box-shadow: 0 3px 10px rgba(13,46,143,.08);
+    transition: background .2s, color .2s, transform .15s;
+  }
+  .pc-nav a:hover,
+  .pc-nav a.is-active {
+    background: #c93700;
+    color: var(--c-white);
+    transform: translateY(-1px);
+  }
+}
