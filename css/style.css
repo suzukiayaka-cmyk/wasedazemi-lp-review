@@ -146,7 +146,7 @@ a { color: inherit; text-decoration: none; }
 .event__box {
   margin: 0 20px 24px;
   background: var(--c-white);
-  border: 4px solid var(--c-blue);
+  border: 4px solid var(--c-blue-dk);
   border-radius: 20px;
   padding: 26px 16px 24px;
   text-align: center;
@@ -162,12 +162,11 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 .event__name {
-  font-size: clamp(16px, 5.6vw, 21px);
+  font-size: clamp(20px, 7vw, 26px);
   font-weight: 900;
-  color: var(--c-blue);
-  line-height: 1.4;
+  color: var(--c-blue-dk);
+  line-height: 1.3;
   margin-bottom: 10px;
-  white-space: nowrap;
 }
 .event__sub {
   font-size: clamp(11px, 3.4vw, 15px);
@@ -194,8 +193,8 @@ a { color: inherit; text-decoration: none; }
   padding: 18px 12px;
   font-size: clamp(19px, 6vw, 23px);
   font-weight: 700;
-  background: var(--c-blue);
-  box-shadow: 0 6px 16px rgba(26, 79, 214, .4);
+  background: var(--c-blue-dk);
+  box-shadow: 0 6px 16px rgba(13, 46, 143, .4);
 }
 
 /* --- 説明会参加者限定特典 --- */
@@ -222,7 +221,11 @@ a { color: inherit; text-decoration: none; }
 
 /* --- 説明会内容 --- */
 .content-sec { padding-bottom: 24px; text-align: center; }
-.content-sec__lead { font-size: clamp(26px, 8.5vw, 32px); font-weight: 700; color: var(--c-gray); padding-top: 24px; }
+.content-sec__lead-img {
+  width: 100%;
+  margin: 24px auto 0;
+  height: auto;
+}
 .content-sec__banner {
   background: var(--c-orange);
   color: var(--c-white);
