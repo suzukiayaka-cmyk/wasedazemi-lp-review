@@ -27,7 +27,7 @@
 })();
 
 (() => {
-  const revealEls = document.querySelectorAll('.reveal, .content-sec__ttl-img');
+  const revealEls = document.querySelectorAll('.reveal, .pop-in');
   if (!revealEls.length) return;
 
   const observer = new IntersectionObserver(
