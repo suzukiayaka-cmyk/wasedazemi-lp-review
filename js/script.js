@@ -27,7 +27,7 @@
 })();
 
 (() => {
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = document.querySelectorAll('.reveal, .content-sec__ttl-img');
   if (!revealEls.length) return;
 
   const observer = new IntersectionObserver(
