@@ -230,7 +230,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   right: 12px;
   bottom: 0;
-  height: 220px;
+  height: 180px;
   width: auto;
   z-index: 2;
 }
@@ -279,7 +279,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   left: 4px;
   bottom: 0;
-  height: 120px;
+  height: 100px;
   width: auto;
   z-index: 2;
 }
@@ -367,7 +367,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--c-dark);
 }
 .schedule__date-all-date { color: var(--c-orange); }
-.schedule__note--top { padding: 10px 20px 48px; font-size: clamp(17px, 4.8vw, 20px); line-height: 1.8; }
+.schedule__note--top { padding: 10px 20px 48px; font-size: clamp(14px, 3.8vw, 16px); line-height: 1.8; }
 .schedule__accordion {
   padding: 24px 20px 0;
   display: flex;
@@ -433,6 +433,12 @@ a { color: inherit; text-decoration: none; }
   padding-top: 10px;
   border-top: 1px dashed var(--c-border);
 }
+.schedule__date-row--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.schedule__date-row--stack .schedule__time { align-self: flex-end; }
 .schedule__date-extra-label {
   font-size: 0.9em;
   font-weight: 800;
@@ -502,6 +508,7 @@ a { color: inherit; text-decoration: none; }
   body {
     background: url("../img/bg_pc.png") center / cover no-repeat fixed;
   }
+  .schedule__note--top { font-size: clamp(17px, 4.8vw, 20px); }
 }
 
 /* =========================================================
