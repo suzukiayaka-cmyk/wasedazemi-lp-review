@@ -287,6 +287,10 @@ a { color: inherit; text-decoration: none; }
 .pop-in.is-visible {
   animation: ttlImgPop .7s cubic-bezier(.34, 1.56, .64, 1) forwards;
 }
+.content-sec__ttl-img.is-visible,
+.worries__student.is-visible {
+  animation-delay: .25s;
+}
 @keyframes ttlImgPop {
   0% { opacity: 0; transform: translateY(40px) scale(.5); }
   60% { opacity: 1; transform: translateY(-10px) scale(1.08); }
