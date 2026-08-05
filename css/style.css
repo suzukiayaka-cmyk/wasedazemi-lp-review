@@ -162,7 +162,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 .event__name {
-  font-size: clamp(20px, 7vw, 26px);
+  font-size: clamp(24px, 8.2vw, 31px);
   font-weight: 900;
   color: var(--c-blue-dk);
   line-height: 1.3;
